@@ -18,11 +18,12 @@ epsilon = 0.5 # for randomness
 EPS_DECAY = 0.999 # decay per episode
 SHOW_EVERY = 1000 # to visualize
 
-start_q_table = None  # if we have a pickled Q table, we'll put the filename of it here.
+start_q_table = None  # "qtable_file"
+
 
 LEARNING_RATE = 0.1
 DISCOUNT = 0.5
-outputAction=["LEFT","RIGHT","DOWN"]
+outputAction=["LEFT","RIGHT","UP"]
 # The configuration
 config = {
 	'cell_size':	20,
@@ -136,6 +137,12 @@ class TetrisApp(object):
 		self.board = new_board()
 		self.new_stone()
 		self.score=0
+
+		# HEURISTICS
+		self.num_lines_cleared = 0
+		self.num_holes = 0
+		self.bumpiness = 0
+		self.total_height = 0
 	
 	def center_msg(self, msg):
 		for i, line in enumerate(msg.splitlines()):
@@ -204,6 +211,8 @@ class TetrisApp(object):
 				  self.stone,
 				  (self.stone_x, self.stone_y))
 				self.new_stone()
+
+				# update score and cleared lines count
 				newScore=0
 				while True:
 					for i, row in enumerate(self.board[:-1]):
@@ -211,9 +220,24 @@ class TetrisApp(object):
 							self.board = remove_row(
 							  self.board, i)
 							newScore+=1
+							self.num_lines_cleared+=1
 							break
 					else:
 						break
+
+				# update hole count
+				self.num_holes = 0
+				for i, row in enumerate(self.board[:-1]):
+					self.num_holes+=row.count(0)
+
+				# update bumpiness count
+				self.bumpiness = 0
+				# TODO
+
+				# update total height
+				self.total_height = 0
+				# TODO
+
 				self.score+=(1+newScore**2)//1.5
 	
 	def rotate_stone(self):
@@ -271,18 +295,23 @@ Press space to continue""")
 			pygame.display.update()
 			
 			for event in pygame.event.get():
-				if event.type == pygame.USEREVENT+1:
-					self.drop()
+				if event.type == pygame.USEREVENT+1: # custom event
+					self.drop() # drops new stone and scoring
 				elif event.type == pygame.QUIT:
 					self.quit()
-				elif event.type == pygame.KEYDOWN:
+				else:
+				
+				#elif event.type == pygame.KEYDOWN:
 					# for key in key_actions: # reads keys from keyboard
 						# if event.key == eval("pygame.K_"+key):
 						#	key_actions[key]()
-					## WE WANT SW VERSION
 
 						# use  key_actions[key]() to do different actions
-						obs = (,) # ???? should be in terms of keys or other heuristics?
+						obs = ( self.num_lines_cleared,
+								self.num_holes,
+								self.bumpiness,
+								self.total_height
+								)
 
 						#INPUTS
 						boardState=self.board
@@ -300,15 +329,16 @@ Press space to continue""")
 						# run action 
 						key_actions[outputAction[out]]()
 
-						# rewarding is handled by tetris code 
-						# needs to initialize reward var
-
 						# updating q table
-						new_obs = (,) #?? idk new observation
+						new_obs = ( self.num_lines_cleared,
+									self.num_holes,
+									self.bumpiness,
+									self.total_height
+								)
 						max_future_q = np.max(q_table[new_obs])  # max Q value for this new obs
 						current_q = q_table[obs][action]  # current Q for our chosen action
 						
-						if reward == 10: #completed line??
+						if reward == 1: # cost fxn in terms of heuristic?
 							new_q = reward;
 						else:
 							new_q = (1 - LEARNING_RATE) * current_q + LEARNING_RATE * (reward + DISCOUNT * max_future_q)
@@ -323,15 +353,13 @@ if __name__ == '__main__':
 	main()
 
 def main():
-	App = TetrisApp()
 	# predicting outputAction
-	# outputAction=["LEFT","RIGHT","DOWN"]
+	# outputAction=["LEFT","RIGHT","UP"]
 	# predicting  out = 0 || 1 ||2
 
-
-	## i know this looks really bad but we can fix it later plis
+	# init training phase
 	if start_q_table is None:
-		# initialize the q-table #
+		# initialize the q-table # dk dimensions wat????
 		q_table = {}
 		for i in range(-SIZE+1, SIZE):
 			for ii in range(-SIZE+1, SIZE):
@@ -352,10 +380,15 @@ def main():
 		else:
 			show = False
 
+		App = TetrisApp()
 		episode_reward = App.run() # runs one iteration of the game and updates q table
 		
 		episode_rewards.append(episode_reward)
 		epsilon *= EPS_DECAY
+
+	with open("qtable_file", "w") as file:
+	for line in q_table:
+		file.write(" ".join(line) + "\n") 
 
 	print ('Training done!')
 
