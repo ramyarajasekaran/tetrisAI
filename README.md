@@ -22,3 +22,15 @@ in the dqn_agent.py file, replace the function _build_model with this:
         print("loaded dqnAgent")
         
         return model
+## Loading pickled agent
+in run.py file :
+
+
+    with open(r"pickled_dqn", "rb") as input_file:
+        agent = pickle.load(input_file)
+    '''
+    agent = DQNAgent(env.get_state_size(),
+                     n_neurons=n_neurons, activations=activations,
+                     epsilon_stop_episode=epsilon_stop_episode, mem_size=mem_size,
+                     discount=discount, replay_start_size=replay_start_size)
+    '''
