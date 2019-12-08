@@ -1,0 +1,736 @@
+Last login: Sat Dec  7 22:44:47 on ttys001
+Prajaktas-MacBook-Pro:~ prajjoshi$ cd PycharmProjects/tetrisAI/tetris-ai/
+Prajaktas-MacBook-Pro:tetris-ai prajjoshi$ ls
+README.md		logs			run.py
+__pycache__		logs.py			tetris.py
+demo.gif		requirements.txt
+dqn_agent.py		results.svg
+Prajaktas-MacBook-Pro:tetris-ai prajjoshi$ python3 run.py
+Using TensorFlow backend.
+2019-12-08 00:59:35.389831: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-12-08 00:59:35.398930: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7fccbd6b3c40 executing computations on platform Host. Devices:
+2019-12-08 00:59:35.398948: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+  1%|▍                                        | 50/5000 [00:05<04:32, 18.18it/s]50 19.18 13 25
+  2%|▊                                        | 99/5000 [00:10<04:17, 19.07it/s]100 19.44 11 39
+  3%|█▏                                      | 149/5000 [00:17<05:42, 14.16it/s]150 19.3 8 32
+  4%|█▌                                      | 199/5000 [00:24<05:40, 14.12it/s]200 18.34 13 27
+  5%|█▉                                      | 249/5000 [00:30<05:39, 13.98it/s]^CTraceback (most recent call last):
+  File "run.py", line 88, in <module>
+    dqn()
+  File "run.py", line 62, in dqn
+    render_delay=render_delay)
+  File "/Users/prajjoshi/PycharmProjects/tetrisAI/tetris-ai/tetris.py", line 283, in play
+    self.render()
+  File "/Users/prajjoshi/PycharmProjects/tetrisAI/tetris-ai/tetris.py", line 313, in render
+    cv2.waitKey(1)
+KeyboardInterrupt
+  5%|█▉                                      | 249/5000 [00:31<10:09,  7.80it/s]
+Prajaktas-MacBook-Pro:tetris-ai prajjoshi$ python3 run.py
+Using TensorFlow backend.
+2019-12-08 01:01:59.131892: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-12-08 01:01:59.142410: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f949b3a6730 executing computations on platform Host. Devices:
+2019-12-08 01:01:59.142428: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+  0%|                                                  | 0/5000 [00:00<?, ?it/s]saveddqnAgent.h5at0
+  0%|                                        | 1/5000 [00:02<3:24:24,  2.45s/it]saveddqnAgent.h5at1
+saveddqnAgent.h5at2
+  0%|                                        | 3/5000 [00:02<2:24:31,  1.74s/it]saveddqnAgent.h5at3
+saveddqnAgent.h5at4
+  0%|                                        | 5/5000 [00:02<1:42:27,  1.23s/it]saveddqnAgent.h5at5
+saveddqnAgent.h5at6
+  0%|                                        | 7/5000 [00:02<1:13:17,  1.14it/s]saveddqnAgent.h5at7
+saveddqnAgent.h5at8
+  0%|                                          | 9/5000 [00:02<52:46,  1.58it/s]saveddqnAgent.h5at9
+saveddqnAgent.h5at10
+  0%|                                         | 11/5000 [00:03<38:27,  2.16it/s]saveddqnAgent.h5at11
+saveddqnAgent.h5at12
+  0%|                                         | 13/5000 [00:03<28:19,  2.93it/s]saveddqnAgent.h5at13
+saveddqnAgent.h5at14
+  0%|                                         | 15/5000 [00:03<21:11,  3.92it/s]saveddqnAgent.h5at15
+saveddqnAgent.h5at16
+saveddqnAgent.h5at17
+  0%|▏                                        | 18/5000 [00:03<15:59,  5.19it/s]saveddqnAgent.h5at18
+saveddqnAgent.h5at19
+  0%|▏                                        | 20/5000 [00:03<12:31,  6.63it/s]saveddqnAgent.h5at20
+saveddqnAgent.h5at21
+  0%|▏                                        | 22/5000 [00:03<10:01,  8.28it/s]saveddqnAgent.h5at22
+saveddqnAgent.h5at23
+  0%|▏                                        | 24/5000 [00:03<08:17,  9.99it/s]saveddqnAgent.h5at24
+saveddqnAgent.h5at25
+saveddqnAgent.h5at26
+  1%|▏                                        | 27/5000 [00:03<07:03, 11.75it/s]saveddqnAgent.h5at27
+saveddqnAgent.h5at28
+saveddqnAgent.h5at29
+  1%|▏                                        | 30/5000 [00:04<06:15, 13.24it/s]saveddqnAgent.h5at30
+saveddqnAgent.h5at31
+  1%|▎                                        | 32/5000 [00:04<05:41, 14.54it/s]saveddqnAgent.h5at32
+saveddqnAgent.h5at33
+  1%|▎                                        | 34/5000 [00:04<05:15, 15.74it/s]saveddqnAgent.h5at34
+saveddqnAgent.h5at35
+  1%|▎                                        | 36/5000 [00:04<04:58, 16.63it/s]saveddqnAgent.h5at36
+saveddqnAgent.h5at37
+  1%|▎                                        | 38/5000 [00:04<04:45, 17.35it/s]saveddqnAgent.h5at38
+saveddqnAgent.h5at39
+  1%|▎                                        | 40/5000 [00:04<04:39, 17.76it/s]saveddqnAgent.h5at40
+saveddqnAgent.h5at41
+  1%|▎                                        | 42/5000 [00:04<04:30, 18.32it/s]saveddqnAgent.h5at42
+saveddqnAgent.h5at43
+  1%|▎                                        | 44/5000 [00:04<04:35, 18.00it/s]saveddqnAgent.h5at44
+saveddqnAgent.h5at45
+saveddqnAgent.h5at46
+  1%|▍                                        | 47/5000 [00:04<04:31, 18.26it/s]saveddqnAgent.h5at47
+saveddqnAgent.h5at48
+  1%|▍                                        | 49/5000 [00:05<04:28, 18.41it/s]saveddqnAgent.h5at49
+saveddqnAgentMax.h5at50
+50 19.02 10 26
+saveddqnAgent.h5at50
+  1%|▍                                        | 51/5000 [00:07<28:32,  2.89it/s]saveddqnAgent.h5at51
+saveddqnAgent.h5at52
+  1%|▍                                        | 53/5000 [00:07<21:23,  3.86it/s]saveddqnAgent.h5at53
+saveddqnAgent.h5at54
+  1%|▍                                        | 55/5000 [00:07<16:33,  4.98it/s]saveddqnAgent.h5at55
+saveddqnAgent.h5at56
+  1%|▍                                        | 57/5000 [00:07<13:05,  6.29it/s]saveddqnAgent.h5at57
+saveddqnAgent.h5at58
+  1%|▍                                        | 59/5000 [00:07<10:27,  7.88it/s]saveddqnAgent.h5at59
+saveddqnAgent.h5at60
+  1%|▌                                        | 61/5000 [00:07<08:38,  9.53it/s]saveddqnAgent.h5at61
+saveddqnAgent.h5at62
+  1%|▌                                        | 63/5000 [00:07<07:26, 11.06it/s]saveddqnAgent.h5at63
+saveddqnAgent.h5at64
+  1%|▌                                        | 65/5000 [00:07<06:28, 12.69it/s]saveddqnAgent.h5at65
+saveddqnAgent.h5at66
+  1%|▌                                        | 67/5000 [00:08<06:05, 13.51it/s]saveddqnAgent.h5at67
+saveddqnAgent.h5at68
+  1%|▌                                        | 69/5000 [00:08<05:33, 14.80it/s]saveddqnAgent.h5at69
+saveddqnAgent.h5at70
+  1%|▌                                        | 71/5000 [00:08<05:09, 15.90it/s]saveddqnAgent.h5at71
+saveddqnAgent.h5at72
+saveddqnAgent.h5at73
+  1%|▌                                        | 74/5000 [00:08<04:48, 17.10it/s]saveddqnAgent.h5at74
+saveddqnAgent.h5at75
+  2%|▌                                        | 76/5000 [00:08<04:42, 17.44it/s]saveddqnAgent.h5at76
+saveddqnAgent.h5at77
+saveddqnAgent.h5at78
+  2%|▋                                        | 79/5000 [00:08<04:26, 18.49it/s]saveddqnAgent.h5at79
+saveddqnAgent.h5at80
+  2%|▋                                        | 81/5000 [00:08<04:30, 18.18it/s]saveddqnAgent.h5at81
+saveddqnAgent.h5at82
+saveddqnAgent.h5at83
+  2%|▋                                        | 84/5000 [00:08<04:18, 18.98it/s]saveddqnAgent.h5at84
+saveddqnAgent.h5at85
+  2%|▋                                        | 86/5000 [00:08<04:15, 19.20it/s]saveddqnAgent.h5at86
+saveddqnAgent.h5at87
+  2%|▋                                        | 88/5000 [00:09<04:13, 19.38it/s]saveddqnAgent.h5at88
+saveddqnAgent.h5at89
+  2%|▋                                        | 90/5000 [00:09<04:18, 19.02it/s]saveddqnAgent.h5at90
+saveddqnAgent.h5at91
+  2%|▊                                        | 92/5000 [00:09<04:18, 19.02it/s]saveddqnAgent.h5at92
+saveddqnAgent.h5at93
+saveddqnAgent.h5at94
+  2%|▊                                        | 95/5000 [00:09<04:18, 18.97it/s]saveddqnAgent.h5at95
+saveddqnAgent.h5at96
+saveddqnAgent.h5at97
+  2%|▊                                        | 98/5000 [00:09<04:13, 19.33it/s]saveddqnAgent.h5at98
+saveddqnAgent.h5at99
+  2%|▊                                       | 100/5000 [00:09<04:14, 19.26it/s]saveddqnAgentMax.h5at100
+100 20.02 11 38
+saveddqnAgent.h5at100
+saveddqnAgent.h5at101
+  2%|▊                                       | 102/5000 [00:12<35:07,  2.32it/s]saveddqnAgent.h5at102
+saveddqnAgent.h5at103
+  2%|▊                                       | 104/5000 [00:12<29:45,  2.74it/s]saveddqnAgent.h5at104
+saveddqnAgent.h5at105
+  2%|▊                                       | 106/5000 [00:12<22:34,  3.61it/s]saveddqnAgent.h5at106
+saveddqnAgent.h5at107
+  2%|▊                                       | 108/5000 [00:13<17:30,  4.66it/s]saveddqnAgent.h5at108
+saveddqnAgent.h5at109
+  2%|▉                                       | 110/5000 [00:13<13:50,  5.89it/s]saveddqnAgent.h5at110
+saveddqnAgent.h5at111
+  2%|▉                                       | 112/5000 [00:13<11:13,  7.26it/s]saveddqnAgent.h5at112
+saveddqnAgent.h5at113
+  2%|▉                                       | 114/5000 [00:13<09:36,  8.48it/s]saveddqnAgent.h5at114
+saveddqnAgent.h5at115
+  2%|▉                                       | 116/5000 [00:13<08:34,  9.49it/s]saveddqnAgent.h5at116
+saveddqnAgent.h5at117
+  2%|▉                                       | 118/5000 [00:13<07:49, 10.41it/s]saveddqnAgent.h5at118
+saveddqnAgent.h5at119
+  2%|▉                                       | 120/5000 [00:13<07:04, 11.49it/s]saveddqnAgent.h5at120
+saveddqnAgent.h5at121
+  2%|▉                                       | 122/5000 [00:13<06:31, 12.45it/s]saveddqnAgent.h5at122
+saveddqnAgent.h5at123
+  2%|▉                                       | 124/5000 [00:14<06:11, 13.12it/s]saveddqnAgent.h5at124
+saveddqnAgent.h5at125
+  3%|█                                       | 126/5000 [00:14<05:53, 13.78it/s]saveddqnAgent.h5at126
+saveddqnAgent.h5at127
+  3%|█                                       | 128/5000 [00:14<05:49, 13.94it/s]saveddqnAgent.h5at128
+saveddqnAgent.h5at129
+  3%|█                                       | 130/5000 [00:14<05:45, 14.11it/s]saveddqnAgent.h5at130
+saveddqnAgent.h5at131
+  3%|█                                       | 132/5000 [00:14<05:34, 14.57it/s]saveddqnAgent.h5at132
+saveddqnAgent.h5at133
+  3%|█                                       | 134/5000 [00:14<05:31, 14.66it/s]saveddqnAgent.h5at134
+saveddqnAgent.h5at135
+  3%|█                                       | 136/5000 [00:14<05:24, 15.01it/s]saveddqnAgent.h5at136
+saveddqnAgent.h5at137
+  3%|█                                       | 138/5000 [00:15<05:18, 15.27it/s]saveddqnAgent.h5at138
+saveddqnAgent.h5at139
+  3%|█                                       | 140/5000 [00:15<05:27, 14.83it/s]saveddqnAgent.h5at140
+saveddqnAgent.h5at141
+  3%|█▏                                      | 142/5000 [00:15<06:02, 13.39it/s]saveddqnAgent.h5at142
+saveddqnAgent.h5at143
+  3%|█▏                                      | 144/5000 [00:15<05:50, 13.87it/s]saveddqnAgent.h5at144
+saveddqnAgent.h5at145
+  3%|█▏                                      | 146/5000 [00:15<05:43, 14.12it/s]saveddqnAgent.h5at146
+saveddqnAgent.h5at147
+  3%|█▏                                      | 148/5000 [00:15<05:33, 14.55it/s]saveddqnAgent.h5at148
+saveddqnAgent.h5at149
+  3%|█▏                                      | 150/5000 [00:15<05:44, 14.09it/s]saveddqnAgentMax.h5at150
+150 18.74 13 25
+saveddqnAgent.h5at150
+saveddqnAgent.h5at151
+  3%|█▏                                      | 152/5000 [00:19<44:27,  1.82it/s]saveddqnAgent.h5at152
+saveddqnAgent.h5at153
+  3%|█▏                                      | 154/5000 [00:19<32:54,  2.45it/s]saveddqnAgent.h5at154
+saveddqnAgent.h5at155
+  3%|█▏                                      | 156/5000 [00:19<24:34,  3.29it/s]saveddqnAgent.h5at156
+saveddqnAgent.h5at157
+  3%|█▎                                      | 158/5000 [00:19<18:53,  4.27it/s]saveddqnAgent.h5at158
+saveddqnAgent.h5at159
+  3%|█▎                                      | 160/5000 [00:19<14:51,  5.43it/s]saveddqnAgent.h5at160
+saveddqnAgent.h5at161
+  3%|█▎                                      | 162/5000 [00:19<12:10,  6.62it/s]saveddqnAgent.h5at162
+saveddqnAgent.h5at163
+  3%|█▎                                      | 164/5000 [00:20<10:07,  7.96it/s]saveddqnAgent.h5at164
+saveddqnAgent.h5at165
+  3%|█▎                                      | 166/5000 [00:20<08:39,  9.30it/s]saveddqnAgent.h5at166
+saveddqnAgent.h5at167
+  3%|█▎                                      | 168/5000 [00:20<07:32, 10.67it/s]saveddqnAgent.h5at168
+saveddqnAgent.h5at169
+  3%|█▎                                      | 170/5000 [00:20<06:55, 11.63it/s]saveddqnAgent.h5at170
+saveddqnAgent.h5at171
+  3%|█▍                                      | 172/5000 [00:20<06:26, 12.49it/s]saveddqnAgent.h5at172
+saveddqnAgent.h5at173
+  3%|█▍                                      | 174/5000 [00:20<06:02, 13.31it/s]saveddqnAgent.h5at174
+saveddqnAgent.h5at175
+  4%|█▍                                      | 176/5000 [00:20<05:56, 13.54it/s]saveddqnAgent.h5at176
+saveddqnAgent.h5at177
+  4%|█▍                                      | 178/5000 [00:21<05:49, 13.78it/s]saveddqnAgent.h5at178
+saveddqnAgent.h5at179
+  4%|█▍                                      | 180/5000 [00:21<05:35, 14.38it/s]saveddqnAgent.h5at180
+saveddqnAgent.h5at181
+  4%|█▍                                      | 182/5000 [00:21<05:31, 14.54it/s]saveddqnAgent.h5at182
+saveddqnAgent.h5at183
+  4%|█▍                                      | 184/5000 [00:21<05:52, 13.66it/s]saveddqnAgent.h5at184
+saveddqnAgent.h5at185
+  4%|█▍                                      | 186/5000 [00:21<05:38, 14.21it/s]saveddqnAgent.h5at186
+saveddqnAgent.h5at187
+  4%|█▌                                      | 188/5000 [00:21<05:34, 14.38it/s]saveddqnAgent.h5at188
+saveddqnAgent.h5at189
+  4%|█▌                                      | 190/5000 [00:21<05:30, 14.55it/s]saveddqnAgent.h5at190
+saveddqnAgent.h5at191
+  4%|█▌                                      | 192/5000 [00:21<05:24, 14.84it/s]saveddqnAgent.h5at192
+saveddqnAgent.h5at193
+  4%|█▌                                      | 194/5000 [00:22<05:20, 15.01it/s]saveddqnAgent.h5at194
+saveddqnAgent.h5at195
+  4%|█▌                                      | 196/5000 [00:22<05:22, 14.90it/s]saveddqnAgent.h5at196
+saveddqnAgent.h5at197
+  4%|█▌                                      | 198/5000 [00:22<05:24, 14.80it/s]saveddqnAgent.h5at198
+saveddqnAgent.h5at199
+  4%|█▌                                      | 200/5000 [00:22<05:23, 14.84it/s]saveddqnAgentMax.h5at200
+200 17.98 11 25
+saveddqnAgent.h5at200
+saveddqnAgent.h5at201
+  4%|█▌                                      | 202/5000 [00:24<31:33,  2.53it/s]saveddqnAgent.h5at202
+saveddqnAgent.h5at203
+  4%|█▋                                      | 204/5000 [00:24<23:41,  3.37it/s]saveddqnAgent.h5at204
+saveddqnAgent.h5at205
+  4%|█▋                                      | 206/5000 [00:25<18:32,  4.31it/s]saveddqnAgent.h5at206
+saveddqnAgent.h5at207
+  4%|█▋                                      | 208/5000 [00:25<14:28,  5.52it/s]saveddqnAgent.h5at208
+saveddqnAgent.h5at209
+  4%|█▋                                      | 210/5000 [00:25<11:34,  6.90it/s]saveddqnAgent.h5at210
+saveddqnAgent.h5at211
+  4%|█▋                                      | 212/5000 [00:25<09:46,  8.17it/s]saveddqnAgent.h5at212
+saveddqnAgent.h5at213
+  4%|█▋                                      | 214/5000 [00:25<08:44,  9.13it/s]saveddqnAgent.h5at214
+saveddqnAgent.h5at215
+  4%|█▋                                      | 216/5000 [00:25<08:07,  9.82it/s]saveddqnAgent.h5at216
+saveddqnAgent.h5at217
+  4%|█▋                                      | 218/5000 [00:25<07:31, 10.59it/s]saveddqnAgent.h5at218
+saveddqnAgent.h5at219
+  4%|█▊                                      | 220/5000 [00:26<06:48, 11.71it/s]saveddqnAgent.h5at220
+saveddqnAgent.h5at221
+  4%|█▊                                      | 222/5000 [00:26<06:22, 12.48it/s]saveddqnAgent.h5at222
+saveddqnAgent.h5at223
+  4%|█▊                                      | 224/5000 [00:26<06:31, 12.20it/s]saveddqnAgent.h5at224
+saveddqnAgent.h5at225
+  5%|█▊                                      | 226/5000 [00:26<05:56, 13.40it/s]saveddqnAgent.h5at226
+saveddqnAgent.h5at227
+  5%|█▊                                      | 228/5000 [00:26<05:45, 13.83it/s]saveddqnAgent.h5at228
+saveddqnAgent.h5at229
+  5%|█▊                                      | 230/5000 [00:26<05:30, 14.42it/s]saveddqnAgent.h5at230
+saveddqnAgent.h5at231
+  5%|█▊                                      | 232/5000 [00:26<05:24, 14.68it/s]saveddqnAgent.h5at232
+saveddqnAgent.h5at233
+  5%|█▊                                      | 234/5000 [00:27<05:21, 14.84it/s]saveddqnAgent.h5at234
+saveddqnAgent.h5at235
+  5%|█▉                                      | 236/5000 [00:27<05:45, 13.80it/s]saveddqnAgent.h5at236
+saveddqnAgent.h5at237
+  5%|█▉                                      | 238/5000 [00:27<05:50, 13.58it/s]saveddqnAgent.h5at238
+saveddqnAgent.h5at239
+  5%|█▉                                      | 240/5000 [00:27<05:50, 13.57it/s]saveddqnAgent.h5at240
+saveddqnAgent.h5at241
+  5%|█▉                                      | 242/5000 [00:27<05:41, 13.95it/s]saveddqnAgent.h5at242
+saveddqnAgent.h5at243
+  5%|█▉                                      | 244/5000 [00:27<05:38, 14.05it/s]saveddqnAgent.h5at244
+saveddqnAgent.h5at245
+  5%|█▉                                      | 246/5000 [00:27<05:51, 13.52it/s]saveddqnAgent.h5at246
+saveddqnAgent.h5at247
+  5%|█▉                                      | 248/5000 [00:28<05:57, 13.28it/s]saveddqnAgent.h5at248
+saveddqnAgent.h5at249
+  5%|██                                      | 250/5000 [00:28<06:08, 12.91it/s]saveddqnAgentMax.h5at250
+250 18.48 9 32
+saveddqnAgent.h5at250
+saveddqnAgent.h5at251
+  5%|██                                      | 252/5000 [00:30<32:49,  2.41it/s]saveddqnAgent.h5at252
+saveddqnAgent.h5at253
+  5%|██                                      | 254/5000 [00:30<25:02,  3.16it/s]saveddqnAgent.h5at254
+  5%|██                                      | 255/5000 [00:31<20:47,  3.80it/s]saveddqnAgent.h5at255
+saveddqnAgent.h5at256
+  5%|██                                      | 257/5000 [00:31<16:11,  4.88it/s]saveddqnAgent.h5at257
+saveddqnAgent.h5at258
+  5%|██                                      | 259/5000 [00:31<13:11,  5.99it/s]saveddqnAgent.h5at259
+saveddqnAgent.h5at260
+  5%|██                                      | 261/5000 [00:31<11:22,  6.94it/s]saveddqnAgent.h5at261
+saveddqnAgent.h5at262
+  5%|██                                      | 263/5000 [00:31<09:50,  8.03it/s]saveddqnAgent.h5at263
+saveddqnAgent.h5at264
+  5%|██                                      | 265/5000 [00:31<08:28,  9.30it/s]saveddqnAgent.h5at265
+saveddqnAgent.h5at266
+  5%|██▏                                     | 267/5000 [00:31<07:39, 10.30it/s]saveddqnAgent.h5at267
+saveddqnAgent.h5at268
+  5%|██▏                                     | 269/5000 [00:32<06:58, 11.30it/s]saveddqnAgent.h5at269
+saveddqnAgent.h5at270
+  5%|██▏                                     | 271/5000 [00:32<06:47, 11.61it/s]saveddqnAgent.h5at271
+saveddqnAgent.h5at272
+  5%|██▏                                     | 273/5000 [00:32<06:25, 12.27it/s]saveddqnAgent.h5at273
+saveddqnAgent.h5at274
+  6%|██▏                                     | 275/5000 [00:32<06:38, 11.85it/s]saveddqnAgent.h5at275
+saveddqnAgent.h5at276
+  6%|██▏                                     | 277/5000 [00:32<06:11, 12.72it/s]saveddqnAgent.h5at277
+saveddqnAgent.h5at278
+  6%|██▏                                     | 279/5000 [00:32<06:00, 13.11it/s]saveddqnAgent.h5at279
+saveddqnAgent.h5at280
+  6%|██▏                                     | 281/5000 [00:32<06:15, 12.57it/s]saveddqnAgent.h5at281
+saveddqnAgent.h5at282
+  6%|██▎                                     | 283/5000 [00:33<06:23, 12.31it/s]saveddqnAgent.h5at283
+saveddqnAgent.h5at284
+  6%|██▎                                     | 285/5000 [00:33<06:00, 13.08it/s]saveddqnAgent.h5at285
+^CTraceback (most recent call last):
+  File "run.py", line 88, in <module>
+    dqn()
+  File "run.py", line 52, in dqn
+    next_states = env.get_next_states()
+  File "/Users/prajjoshi/PycharmProjects/tetrisAI/tetris-ai/tetris.py", line 258, in get_next_states
+    while not self._check_collision(piece, pos):
+  File "/Users/prajjoshi/PycharmProjects/tetrisAI/tetris-ai/tetris.py", line 134, in _check_collision
+    or self.board[y][x] == Tetris.MAP_BLOCK:
+KeyboardInterrupt
+  6%|██▎                                     | 285/5000 [00:33<09:12,  8.53it/s]
+Prajaktas-MacBook-Pro:tetris-ai prajjoshi$ ls
+README.md		logs			run.py
+__pycache__		logs.py			tetris.py
+demo.gif		requirements.txt
+dqn_agent.py		results.svg
+Prajaktas-MacBook-Pro:tetris-ai prajjoshi$ python3 run.py
+Using TensorFlow backend.
+2019-12-08 01:06:04.262000: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-12-08 01:06:04.271240: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f9cc9b42050 executing computations on platform Host. Devices:
+2019-12-08 01:06:04.271258: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+  0%|                                                  | 0/5000 [00:00<?, ?it/s]saveddqnAgent.h5at0
+  0%|                                        | 1/5000 [00:03<4:36:32,  3.32s/it]saveddqnAgent.h5at1
+saveddqnAgent.h5at2
+  0%|                                        | 3/5000 [00:03<3:14:47,  2.34s/it]saveddqnAgent.h5at3
+saveddqnAgent.h5at4
+  0%|                                        | 5/5000 [00:03<2:17:43,  1.65s/it]saveddqnAgent.h5at5
+saveddqnAgent.h5at6
+  0%|                                        | 7/5000 [00:03<1:37:55,  1.18s/it]saveddqnAgent.h5at7
+saveddqnAgent.h5at8
+  0%|                                        | 9/5000 [00:03<1:09:48,  1.19it/s]saveddqnAgent.h5at9
+saveddqnAgent.h5at10
+saveddqnAgent.h5at11
+  0%|                                         | 12/5000 [00:03<50:06,  1.66it/s]saveddqnAgent.h5at12
+saveddqnAgent.h5at13
+saveddqnAgent.h5at14
+  0%|                                         | 15/5000 [00:04<36:25,  2.28it/s]saveddqnAgent.h5at15
+saveddqnAgent.h5at16
+saveddqnAgent.h5at17
+  0%|▏                                        | 18/5000 [00:04<26:46,  3.10it/s]saveddqnAgent.h5at18
+saveddqnAgent.h5at19
+  0%|▏                                        | 20/5000 [00:04<20:07,  4.13it/s]saveddqnAgent.h5at20
+saveddqnAgent.h5at21
+  0%|▏                                        | 22/5000 [00:04<15:43,  5.28it/s]saveddqnAgent.h5at22
+saveddqnAgent.h5at23
+saveddqnAgent.h5at24
+  0%|▏                                        | 25/5000 [00:04<12:16,  6.75it/s]saveddqnAgent.h5at25
+saveddqnAgent.h5at26
+  1%|▏                                        | 27/5000 [00:04<09:54,  8.36it/s]saveddqnAgent.h5at27
+saveddqnAgent.h5at28
+  1%|▏                                        | 29/5000 [00:04<08:20,  9.93it/s]saveddqnAgent.h5at29
+saveddqnAgent.h5at30
+  1%|▎                                        | 31/5000 [00:04<07:06, 11.66it/s]saveddqnAgent.h5at31
+saveddqnAgent.h5at32
+saveddqnAgent.h5at33
+  1%|▎                                        | 34/5000 [00:05<06:14, 13.25it/s]saveddqnAgent.h5at34
+saveddqnAgent.h5at35
+  1%|▎                                        | 36/5000 [00:05<05:51, 14.14it/s]saveddqnAgent.h5at36
+saveddqnAgent.h5at37
+  1%|▎                                        | 38/5000 [00:05<05:20, 15.49it/s]saveddqnAgent.h5at38
+saveddqnAgent.h5at39
+  1%|▎                                        | 40/5000 [00:05<05:10, 15.97it/s]saveddqnAgent.h5at40
+saveddqnAgent.h5at41
+  1%|▎                                        | 42/5000 [00:05<04:54, 16.86it/s]saveddqnAgent.h5at42
+saveddqnAgent.h5at43
+  1%|▎                                        | 44/5000 [00:05<04:57, 16.64it/s]saveddqnAgent.h5at44
+saveddqnAgent.h5at45
+  1%|▍                                        | 46/5000 [00:05<04:51, 17.01it/s]saveddqnAgent.h5at46
+saveddqnAgent.h5at47
+  1%|▍                                        | 48/5000 [00:05<04:50, 17.03it/s]saveddqnAgent.h5at48
+saveddqnAgent.h5at49
+  1%|▍                                        | 50/5000 [00:06<04:40, 17.62it/s]50 18.72 11 26
+saveddqnAgent.h5at50
+saveddqnAgent.h5at51
+  1%|▍                                        | 52/5000 [00:08<38:12,  2.16it/s]saveddqnAgent.h5at52
+saveddqnAgent.h5at53
+  1%|▍                                        | 54/5000 [00:08<28:04,  2.94it/s]saveddqnAgent.h5at54
+saveddqnAgent.h5at55
+  1%|▍                                        | 56/5000 [00:09<21:08,  3.90it/s]saveddqnAgent.h5at56
+saveddqnAgent.h5at57
+  1%|▍                                        | 58/5000 [00:09<16:09,  5.10it/s]saveddqnAgent.h5at58
+saveddqnAgent.h5at59
+  1%|▍                                        | 60/5000 [00:09<12:37,  6.52it/s]saveddqnAgent.h5at60
+saveddqnAgent.h5at61
+  1%|▌                                        | 62/5000 [00:09<10:15,  8.03it/s]saveddqnAgent.h5at62
+saveddqnAgent.h5at63
+  1%|▌                                        | 64/5000 [00:09<08:42,  9.44it/s]saveddqnAgent.h5at64
+saveddqnAgent.h5at65
+  1%|▌                                        | 66/5000 [00:09<07:25, 11.07it/s]saveddqnAgent.h5at66
+saveddqnAgent.h5at67
+  1%|▌                                        | 68/5000 [00:09<06:36, 12.44it/s]saveddqnAgent.h5at68
+saveddqnAgent.h5at69
+  1%|▌                                        | 70/5000 [00:09<06:03, 13.56it/s]saveddqnAgent.h5at70
+saveddqnAgent.h5at71
+  1%|▌                                        | 72/5000 [00:09<05:39, 14.50it/s]saveddqnAgent.h5at72
+saveddqnAgent.h5at73
+  1%|▌                                        | 74/5000 [00:10<05:17, 15.51it/s]saveddqnAgent.h5at74
+saveddqnAgent.h5at75
+  2%|▌                                        | 76/5000 [00:10<04:56, 16.58it/s]saveddqnAgent.h5at76
+saveddqnAgent.h5at77
+  2%|▋                                        | 78/5000 [00:10<04:49, 17.02it/s]saveddqnAgent.h5at78
+saveddqnAgent.h5at79
+  2%|▋                                        | 80/5000 [00:10<04:39, 17.63it/s]saveddqnAgent.h5at80
+saveddqnAgent.h5at81
+  2%|▋                                        | 82/5000 [00:10<04:30, 18.20it/s]saveddqnAgent.h5at82
+saveddqnAgent.h5at83
+saveddqnAgent.h5at84
+  2%|▋                                        | 85/5000 [00:10<04:17, 19.08it/s]saveddqnAgent.h5at85
+saveddqnAgent.h5at86
+  2%|▋                                        | 87/5000 [00:10<04:17, 19.05it/s]saveddqnAgent.h5at87
+saveddqnAgent.h5at88
+  2%|▋                                        | 89/5000 [00:10<04:19, 18.92it/s]saveddqnAgent.h5at89
+saveddqnAgent.h5at90
+saveddqnAgent.h5at91
+  2%|▊                                        | 92/5000 [00:10<04:08, 19.73it/s]saveddqnAgent.h5at92
+saveddqnAgent.h5at93
+saveddqnAgent.h5at94
+  2%|▊                                        | 95/5000 [00:11<04:11, 19.49it/s]saveddqnAgent.h5at95
+saveddqnAgent.h5at96
+  2%|▊                                        | 97/5000 [00:11<04:12, 19.45it/s]saveddqnAgent.h5at97
+saveddqnAgent.h5at98
+  2%|▊                                        | 99/5000 [00:11<04:18, 18.94it/s]saveddqnAgent.h5at99
+100 18.86 13 25
+saveddqnAgent.h5at100
+  2%|▊                                       | 101/5000 [00:14<41:02,  1.99it/s]saveddqnAgent.h5at101
+saveddqnAgent.h5at102
+  2%|▊                                       | 103/5000 [00:14<30:11,  2.70it/s]saveddqnAgent.h5at103
+saveddqnAgent.h5at104
+  2%|▊                                       | 105/5000 [00:14<22:23,  3.64it/s]saveddqnAgent.h5at105
+^CTraceback (most recent call last):
+  File "run.py", line 85, in <module>
+    dqn()
+  File "run.py", line 72, in dqn
+    agent.train(batch_size=batch_size, epochs=epochs)
+  File "/Users/prajjoshi/PycharmProjects/tetrisAI/tetris-ai/dqn_agent.py", line 140, in train
+    self.model.fit(np.array(x), np.array(y), batch_size=batch_size, epochs=epochs, verbose=0)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/keras/engine/training.py", line 1213, in fit
+    self._make_train_function()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/keras/engine/training.py", line 333, in _make_train_function
+    **self._function_kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/keras/backend/tensorflow_backend.py", line 3009, in function
+    **kwargs)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow_core/python/keras/backend.py", line 3773, in function
+    return EagerExecutionFunction(inputs, outputs, updates=updates, name=name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow_core/python/keras/backend.py", line 3670, in __init__
+    base_graph=source_graph)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow_core/python/eager/lift_to_graph.py", line 339, in lift_to_graph
+    op=op, graph=graph, op_map=op_map, base_graph=base_graph)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow_core/python/eager/lift_to_graph.py", line 134, in _copy_non_source
+    name=op.name)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow_core/python/framework/func_graph.py", line 548, in create_op
+    compute_device)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow_core/python/framework/ops.py", line 3430, in _create_op_internal
+    self._create_op_helper(ret, compute_device=compute_device)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow_core/python/util/lock_util.py", line 128, in __exit__
+    self._lock.release(self._group_id)
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/site-packages/tensorflow_core/python/util/lock_util.py", line 103, in release
+    self._ready.notifyAll()
+  File "/Library/Frameworks/Python.framework/Versions/3.6/lib/python3.6/threading.py", line 364, in notify_all
+    self.notify(len(self._waiters))
+KeyboardInterrupt
+  2%|▊                                       | 105/5000 [00:14<11:39,  7.00it/s]
+Prajaktas-MacBook-Pro:tetris-ai prajjoshi$ python3 run.py
+Using TensorFlow backend.
+2019-12-08 01:08:33.689745: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-12-08 01:08:33.698739: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7fd2043cd020 executing computations on platform Host. Devices:
+2019-12-08 01:08:33.698757: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+  1%|▍                                        | 48/5000 [00:05<04:35, 17.95it/s]saveddqnAgentMax.h5at50
+50 19.38 8 32
+  2%|▊                                        | 99/5000 [00:09<03:48, 21.45it/s]saveddqnAgentMax.h5at100
+100 19.02 10 26
+  3%|█▏                                      | 149/5000 [00:15<04:36, 17.57it/s]saveddqnAgentMax.h5at150
+150 19.44 10 38
+  4%|█▌                                      | 200/5000 [00:22<04:38, 17.24it/s]saveddqnAgentMax.h5at200
+200 19.74 13 51
+  5%|█▉                                      | 249/5000 [00:27<05:10, 15.29it/s]saveddqnAgentMax.h5at250
+250 18.86 9 25
+  6%|██▍                                     | 300/5000 [00:33<04:58, 15.74it/s]saveddqnAgentMax.h5at300
+300 18.98 10 31
+  7%|██▊                                     | 350/5000 [00:39<05:27, 14.19it/s]saveddqnAgentMax.h5at350
+350 18.92 11 28
+  8%|███▏                                    | 399/5000 [00:45<05:13, 14.67it/s]saveddqnAgentMax.h5at400
+400 18.66 9 27
+  9%|███▌                                    | 449/5000 [00:50<05:59, 12.66it/s]saveddqnAgentMax.h5at450
+450 18.54 11 27
+ 10%|███▉                                    | 499/5000 [00:56<05:48, 12.91it/s]saveddqnAgentMax.h5at500
+500 20.14 11 41
+ 11%|████▍                                   | 549/5000 [01:02<05:21, 13.83it/s]saveddqnAgentMax.h5at550
+550 18.66 11 35
+ 12%|████▊                                   | 600/5000 [01:08<06:08, 11.95it/s]saveddqnAgentMax.h5at600
+600 19.2 11 29
+ 13%|█████▏                                  | 649/5000 [01:16<06:17, 11.51it/s]saveddqnAgentMax.h5at650
+650 19.82 9 34
+ 14%|█████▌                                  | 699/5000 [01:24<06:23, 11.20it/s]saveddqnAgentMax.h5at700
+700 20.3 9 38
+ 15%|█████▉                                  | 749/5000 [01:31<07:25,  9.53it/s]saveddqnAgentMax.h5at750
+750 21.34 13 38
+ 16%|██████▍                                 | 800/5000 [01:39<08:18,  8.42it/s]saveddqnAgentMax.h5at800
+800 20.58 11 41
+ 17%|██████▊                                 | 850/5000 [01:47<06:02, 11.46it/s]saveddqnAgentMax.h5at850
+850 21.28 9 36
+ 18%|███████▏                                | 900/5000 [01:56<08:34,  7.97it/s]saveddqnAgentMax.h5at900
+900 23.5 12 42
+ 19%|███████▌                                | 950/5000 [02:05<08:03,  8.37it/s]saveddqnAgentMax.h5at950
+950 22.32 12 39
+ 20%|███████▊                               | 1000/5000 [02:15<09:36,  6.94it/s]saveddqnAgentMax.h5at1000
+1000 23.26 10 35
+ 21%|████████▏                              | 1050/5000 [02:25<08:19,  7.91it/s]saveddqnAgentMax.h5at1050
+1050 24.34 10 37
+ 22%|████████▌                              | 1100/5000 [02:35<08:15,  7.88it/s]saveddqnAgentMax.h5at1100
+1100 23.52 11 39
+ 23%|████████▉                              | 1150/5000 [02:44<08:53,  7.22it/s]saveddqnAgentMax.h5at1150
+1150 23.14 13 42
+ 24%|█████████▎                             | 1200/5000 [02:54<09:29,  6.67it/s]saveddqnAgentMax.h5at1200
+1200 25.82 15 77
+ 25%|█████████▊                             | 1250/5000 [03:05<10:08,  6.16it/s]saveddqnAgentMax.h5at1250
+1250 28.44 10 86
+ 26%|██████████▏                            | 1299/5000 [03:15<08:52,  6.95it/s]saveddqnAgentMax.h5at1300
+1300 30.56 16 89
+ 27%|██████████▌                            | 1350/5000 [03:27<08:52,  6.86it/s]saveddqnAgentMax.h5at1350
+1350 29.8 13 74
+ 28%|██████████▉                            | 1400/5000 [03:38<09:49,  6.11it/s]saveddqnAgentMax.h5at1400
+1400 29.88 15 66
+ 29%|███████████▎                           | 1450/5000 [03:51<12:14,  4.83it/s]saveddqnAgentMax.h5at1450
+1450 32.38 18 83
+ 30%|███████████▋                           | 1500/5000 [04:03<09:17,  6.27it/s]saveddqnAgentMax.h5at1500
+1500 31.94 15 71
+ 31%|████████████                           | 1550/5000 [04:16<10:50,  5.30it/s]saveddqnAgentMax.h5at1550
+1550 34.46 16 141
+ 32%|████████████▍                          | 1600/5000 [04:29<09:59,  5.68it/s]^CTraceback (most recent call last):
+  File "run.py", line 88, in <module>
+    dqn()
+  File "run.py", line 62, in dqn
+    render_delay=render_delay)
+  File "/Users/prajjoshi/PycharmProjects/tetrisAI/tetris-ai/tetris.py", line 283, in play
+    self.render()
+  File "/Users/prajjoshi/PycharmProjects/tetrisAI/tetris-ai/tetris.py", line 313, in render
+    cv2.waitKey(1)
+KeyboardInterrupt
+ 32%|████████████▍                          | 1600/5000 [04:31<09:36,  5.90it/s]
+Prajaktas-MacBook-Pro:tetris-ai prajjoshi$ python3 run.py
+Using TensorFlow backend.
+2019-12-08 01:13:48.498066: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-12-08 01:13:48.507126: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7fdc5c574020 executing computations on platform Host. Devices:
+2019-12-08 01:13:48.507144: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+  1%|▍                                        | 48/5000 [00:04<04:32, 18.17it/s]saveddqnAgentMax.h5at50
+50 18.92 10 26
+  2%|▊                                        | 98/5000 [00:09<03:53, 21.01it/s]100 19.44 7 26
+  3%|█▏                                      | 150/5000 [00:15<04:39, 17.37it/s]saveddqnAgentMax.h5at150
+150 18.4 11 28
+  4%|█▌                                      | 200/5000 [00:21<04:44, 16.87it/s]saveddqnAgentMax.h5at200
+200 18.46 12 31
+  5%|█▉                                      | 249/5000 [00:27<04:54, 16.16it/s]saveddqnAgentMax.h5at250
+250 19 11 34
+  6%|██▍                                     | 300/5000 [00:33<04:57, 15.80it/s]300 19.24 9 27
+  7%|██▊                                     | 350/5000 [00:39<05:04, 15.27it/s]350 19.08 9 34
+  8%|███▏                                    | 400/5000 [00:46<05:46, 13.29it/s]400 19.58 11 26
+  9%|███▌                                    | 449/5000 [00:52<05:17, 14.36it/s]saveddqnAgentMax.h5at450
+450 20.14 13 40
+ 10%|███▉                                    | 499/5000 [01:00<06:08, 12.21it/s]500 19.56 11 37
+ 11%|████▍                                   | 549/5000 [01:07<06:11, 11.98it/s]550 19.72 9 38
+ 12%|████▊                                   | 600/5000 [01:15<05:43, 12.82it/s]600 20.2 8 40
+ 13%|█████▏                                  | 650/5000 [01:22<07:23,  9.80it/s]650 19.84 12 32
+ 14%|█████▌                                  | 699/5000 [01:29<06:34, 10.91it/s]700 21.58 13 35
+ 15%|█████▉                                  | 742/5000 [01:36<07:03, 10.05it/s]^CTraceback (most recent call last):
+  File "run.py", line 88, in <module>
+    dqn()
+  File "run.py", line 52, in dqn
+    next_states = env.get_next_states()
+  File "/Users/prajjoshi/PycharmProjects/tetrisAI/tetris-ai/tetris.py", line 265, in get_next_states
+    states[(x, rotation)] = self._get_board_props(board)
+  File "/Users/prajjoshi/PycharmProjects/tetrisAI/tetris-ai/tetris.py", line 230, in _get_board_props
+    total_bumpiness, max_bumpiness = self._bumpiness(board)
+  File "/Users/prajjoshi/PycharmProjects/tetrisAI/tetris-ai/tetris.py", line 198, in _bumpiness
+    for i in range(len(min_ys) - 1):
+KeyboardInterrupt
+ 15%|█████▉                                  | 742/5000 [01:36<09:15,  7.66it/s]
+Prajaktas-MacBook-Pro:tetris-ai prajjoshi$ python3 run.py
+Using TensorFlow backend.
+2019-12-08 01:15:38.355837: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-12-08 01:15:38.364886: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7fad190bb3b0 executing computations on platform Host. Devices:
+2019-12-08 01:15:38.364903: I tensorflow/compiler/xla/service/service.cc:175]   StreamExecutor device (0): Host, Default Version
+  1%|▍                                        | 49/5000 [00:05<04:18, 19.13it/s]saveddqnAgentMax.h5at50
+50 18.92 11 26
+  2%|▊                                       | 100/5000 [00:08<03:54, 20.88it/s]saveddqnAgentMax.h5at100
+100 18.52 9 33
+  3%|█▏                                      | 149/5000 [00:11<04:52, 16.59it/s]150 18.88 11 27
+  4%|█▌                                      | 199/5000 [00:14<04:57, 16.13it/s]200 18.66 12 32
+  5%|██                                      | 250/5000 [00:17<04:43, 16.76it/s]saveddqnAgentMax.h5at250
+250 19.58 12 38
+  6%|██▍                                     | 300/5000 [00:21<05:39, 13.86it/s]300 19.64 12 36
+  7%|██▊                                     | 350/5000 [00:24<05:00, 15.49it/s]350 18.2 11 27
+  8%|███▏                                    | 400/5000 [00:27<05:30, 13.92it/s]400 19.2 12 26
+  9%|███▌                                    | 450/5000 [00:31<05:16, 14.37it/s]450 17.84 10 26
+ 10%|███▉                                    | 499/5000 [00:35<06:13, 12.05it/s]500 18.9 11 27
+ 11%|████▍                                   | 549/5000 [00:38<06:10, 12.02it/s]550 18.58 11 31
+ 12%|████▊                                   | 599/5000 [00:43<06:04, 12.06it/s]600 19.14 11 28
+ 13%|█████▏                                  | 649/5000 [00:47<06:13, 11.64it/s]650 20.84 14 37
+ 14%|█████▌                                  | 699/5000 [00:52<06:34, 10.91it/s]700 20.28 12 29
+ 15%|█████▉                                  | 749/5000 [00:56<06:48, 10.40it/s]saveddqnAgentMax.h5at750
+750 20.78 10 40
+ 16%|██████▍                                 | 799/5000 [01:02<08:09,  8.59it/s]800 21.16 13 40
+ 17%|██████▊                                 | 850/5000 [01:07<07:29,  9.23it/s]saveddqnAgentMax.h5at850
+850 21.84 12 58
+ 18%|███████▏                                | 899/5000 [01:13<07:30,  9.10it/s]900 22.16 11 41
+ 19%|███████▌                                | 950/5000 [01:18<07:33,  8.93it/s]950 23.4 13 41
+ 20%|███████▊                               | 1000/5000 [01:24<06:47,  9.81it/s]1000 23.7 13 50
+ 21%|████████▏                              | 1050/5000 [01:34<08:35,  7.66it/s]1050 24.3 14 42
+ 22%|████████▌                              | 1099/5000 [01:40<08:52,  7.33it/s]1100 24.12 12 50
+ 23%|████████▉                              | 1150/5000 [01:47<09:04,  7.07it/s]saveddqnAgentMax.h5at1150
+1150 25.76 12 65
+ 24%|█████████▎                             | 1200/5000 [01:53<09:55,  6.38it/s]1200 24.88 13 42
+ 25%|█████████▊                             | 1250/5000 [02:00<09:05,  6.88it/s]1250 27.88 12 55
+ 26%|██████████▏                            | 1300/5000 [02:08<11:04,  5.57it/s]saveddqnAgentMax.h5at1300
+1300 28.18 10 82
+ 27%|██████████▌                            | 1350/5000 [02:15<09:08,  6.66it/s]1350 27.14 13 54
+ 28%|██████████▉                            | 1399/5000 [02:22<09:27,  6.35it/s]saveddqnAgentMax.h5at1400
+1400 28.88 13 90
+ 29%|███████████▎                           | 1450/5000 [02:30<08:35,  6.89it/s]1450 29.08 13 53
+ 30%|███████████▋                           | 1499/5000 [02:39<10:41,  5.46it/s]saveddqnAgentMax.h5at1500
+1500 32.66 12 114
+ 31%|████████████                           | 1550/5000 [02:48<10:37,  5.41it/s]saveddqnAgentMax.h5at1550
+1550 34.16 10 121
+ 32%|████████████▍                          | 1599/5000 [02:56<10:20,  5.48it/s]1600 30.44 12 62
+ 33%|████████████▊                          | 1650/5000 [03:06<09:34,  5.83it/s]1650 32.3 11 84
+ 34%|█████████████▎                         | 1700/5000 [03:16<09:38,  5.71it/s]1700 32.86 18 63
+ 35%|█████████████▋                         | 1750/5000 [03:25<11:45,  4.60it/s]1750 34.86 11 89
+ 36%|██████████████                         | 1800/5000 [03:35<10:59,  4.85it/s]1800 32.52 15 102
+ 37%|██████████████▍                        | 1850/5000 [03:45<12:10,  4.31it/s]1850 36.56 15 115
+ 38%|██████████████▊                        | 1900/5000 [03:55<09:51,  5.24it/s]1900 32.26 20 56
+ 39%|███████████████▏                       | 1950/5000 [04:07<10:04,  5.05it/s]1950 35.82 18 78
+ 40%|███████████████▌                       | 2000/5000 [04:18<10:34,  4.73it/s]2000 39.62 18 103
+ 41%|███████████████▉                       | 2050/5000 [04:33<14:21,  3.42it/s]saveddqnAgentMax.h5at2050
+2050 42.44 19 130
+ 42%|████████████████▍                      | 2100/5000 [04:45<14:36,  3.31it/s]2100 43.74 18 116
+ 43%|████████████████▊                      | 2150/5000 [04:59<14:51,  3.20it/s]saveddqnAgentMax.h5at2150
+2150 51.5 21 135
+ 44%|█████████████████▏                     | 2200/5000 [05:13<12:10,  3.83it/s]saveddqnAgentMax.h5at2200
+2200 53.02 21 185
+ 45%|█████████████████▌                     | 2250/5000 [05:26<11:53,  3.85it/s]2250 41.66 18 156
+ 46%|█████████████████▉                     | 2300/5000 [05:40<16:32,  2.72it/s]2300 56.04 19 141
+ 47%|██████████████████▎                    | 2350/5000 [05:54<11:49,  3.73it/s]saveddqnAgentMax.h5at2350
+2350 47.44 20 188
+ 48%|██████████████████▋                    | 2400/5000 [06:08<13:24,  3.23it/s]2400 52.56 15 161
+ 49%|███████████████████                    | 2450/5000 [06:23<11:28,  3.71it/s]2450 53.1 23 165
+ 50%|███████████████████▌                   | 2500/5000 [06:38<11:41,  3.56it/s]2500 50.98 23 96
+ 51%|███████████████████▉                   | 2550/5000 [06:52<11:02,  3.70it/s]2550 55.62 15 166
+ 52%|████████████████████▎                  | 2600/5000 [07:09<10:59,  3.64it/s]2600 54.66 20 148
+ 53%|████████████████████▋                  | 2650/5000 [07:24<11:27,  3.42it/s]2650 49.42 20 116
+ 54%|█████████████████████                  | 2700/5000 [07:42<15:16,  2.51it/s]2700 58.42 23 153
+ 55%|█████████████████████▍                 | 2750/5000 [08:01<14:44,  2.54it/s]saveddqnAgentMax.h5at2750
+2750 85.22 17 284
+ 56%|█████████████████████▊                 | 2800/5000 [08:21<17:04,  2.15it/s]2800 84.5 25 218
+ 57%|██████████████████████▏                | 2850/5000 [08:39<14:38,  2.45it/s]2850 71.46 30 245
+ 58%|██████████████████████▌                | 2900/5000 [09:00<14:41,  2.38it/s]2900 87.46 22 247
+ 59%|███████████████████████                | 2950/5000 [09:21<13:16,  2.57it/s]saveddqnAgentMax.h5at2950
+2950 80.96 28 362
+ 60%|███████████████████████▍               | 3000/5000 [09:44<16:00,  2.08it/s]3000 89.64 29 210
+ 61%|███████████████████████▊               | 3050/5000 [10:13<18:26,  1.76it/s]3050 105 23 327
+ 62%|████████████████████████▏              | 3100/5000 [10:37<17:09,  1.85it/s]3100 102.56 29 323
+ 63%|████████████████████████▌              | 3150/5000 [11:01<12:10,  2.53it/s]saveddqnAgentMax.h5at3150
+3150 102.16 21 523
+ 64%|████████████████████████▉              | 3200/5000 [11:26<13:13,  2.27it/s]3200 113.42 29 470
+ 65%|█████████████████████████▎             | 3250/5000 [11:52<16:40,  1.75it/s]3250 110.8 25 347
+ 66%|█████████████████████████▋             | 3300/5000 [12:26<25:47,  1.10it/s]saveddqnAgentMax.h5at3300
+3300 205.92 51 827
+ 67%|██████████████████████████▏            | 3350/5000 [13:02<24:30,  1.12it/s]3350 228.8 30 778
+ 68%|██████████████████████████▌            | 3400/5000 [13:33<13:42,  1.94it/s]3400 164.32 30 732
+ 69%|██████████████████████████▉            | 3450/5000 [14:04<21:24,  1.21it/s]3450 160.42 33 405
+ 70%|███████████████████████████▎           | 3500/5000 [14:37<12:36,  1.98it/s]3500 169.28 32 763
+ 71%|███████████████████████████▋           | 3550/5000 [15:12<11:20,  2.13it/s]saveddqnAgentMax.h5at3550
+3550 200.82 25 1625
+ 72%|████████████████████████████           | 3600/5000 [15:52<19:52,  1.17it/s]saveddqnAgentMax.h5at3600
+3600 307.08 29 1648
+ 73%|████████████████████████████▍          | 3650/5000 [16:27<11:40,  1.93it/s]saveddqnAgentMax.h5at3650
+3650 203.36 29 2393
+ 74%|████████████████████████████▊          | 3700/5000 [17:03<20:02,  1.08it/s]3700 214.58 30 776
+ 75%|█████████████████████████████▎         | 3750/5000 [17:37<13:22,  1.56it/s]3750 169.26 35 644
+ 76%|█████████████████████████████▋         | 3800/5000 [18:10<16:54,  1.18it/s]3800 159.52 37 630
+ 77%|████████████████████████████▍        | 3850/5000 [19:20<1:07:08,  3.50s/it]saveddqnAgentMax.h5at3850
+3850 592.68 33 2786
+ 78%|██████████████████████████████▍        | 3900/5000 [20:05<11:31,  1.59it/s]saveddqnAgentMax.h5at3900
+3900 259.48 31 4598
+ 79%|██████████████████████████████▊        | 3950/5000 [20:43<21:18,  1.22s/it]3950 218.64 38 1148
+ 80%|███████████████████████████████▏       | 4000/5000 [21:31<26:02,  1.56s/it]4000 302.02 38 1075
+ 81%|███████████████████████████████▌       | 4050/5000 [22:23<12:49,  1.23it/s]4050 199.44 37 982
+ 82%|███████████████████████████████▉       | 4100/5000 [23:27<08:24,  1.78it/s]4100 500.3 30 3060
+ 83%|████████████████████████████████▎      | 4150/5000 [24:27<07:10,  1.97it/s]saveddqnAgentMax.h5at4150
+4150 523.1 32 5134
+ 84%|████████████████████████████████▊      | 4200/5000 [25:08<27:09,  2.04s/it]4200 254.02 33 2310
+ 85%|█████████████████████████████████▏     | 4250/5000 [25:40<08:09,  1.53it/s]4250 133.28 36 866
+ 86%|█████████████████████████████████▌     | 4300/5000 [26:21<06:57,  1.68it/s]4300 232.92 33 1964
+ 87%|█████████████████████████████████▉     | 4350/5000 [26:52<09:45,  1.11it/s]4350 136.76 33 973
+ 88%|██████████████████████████████████▎    | 4400/5000 [27:31<05:35,  1.79it/s]4400 224.92 36 1440
+ 89%|██████████████████████████████████▋    | 4450/5000 [28:22<08:09,  1.12it/s]4450 338.64 49 1352
+ 90%|███████████████████████████████████    | 4500/5000 [29:04<11:26,  1.37s/it]4500 247.34 38 1055
+ 91%|███████████████████████████████████▍   | 4550/5000 [29:53<08:04,  1.08s/it]4550 342.8 34 1252
+ 92%|███████████████████████████████████▉   | 4600/5000 [30:33<05:40,  1.17it/s]4600 221.4 36 1439
+ 93%|████████████████████████████████████▎  | 4650/5000 [31:04<02:58,  1.96it/s]4650 126.04 36 550
+ 94%|████████████████████████████████████▋  | 4700/5000 [31:40<02:58,  1.68it/s]4700 167.56 37 881
+ 95%|█████████████████████████████████████  | 4750/5000 [32:10<02:14,  1.86it/s]4750 109.12 32 408
+ 96%|█████████████████████████████████████▍ | 4800/5000 [32:49<01:41,  1.97it/s]4800 230.7 34 2513
+ 97%|█████████████████████████████████████▊ | 4850/5000 [33:24<01:17,  1.93it/s]4850 192.52 33 2132
+ 98%|██████████████████████████████████████▏| 4900/5000 [33:56<00:54,  1.82it/s]4900 158.48 34 1194
+ 99%|██████████████████████████████████████▌| 4950/5000 [34:28<00:24,  2.00it/s]4950 149.32 31 1114
+100%|███████████████████████████████████████| 5000/5000 [34:55<00:00,  2.39it/s]
+saveddqnAgent.h5at4999
+Prajaktas-MacBook-Pro:tetris-ai prajjoshi$ 
