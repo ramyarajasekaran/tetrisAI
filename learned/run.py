@@ -11,12 +11,12 @@ import pickle
 # Run dqn with Tetris
 def dqn():
     env = Tetris(None)
-    episodes = 4000
+    episodes = 2000
     max_steps = None
-    epsilon_stop_episode = 2000
+    epsilon_stop_episode = 1400
     mem_size = 20000
     discount = 0.95
-    batch_size = 1024
+    batch_size = 512
     epochs = 1
     render_every = 300
     log_every = 50
