@@ -19,6 +19,6 @@ in the dqn_agent.py file, replace the function _build_model with this:
         model.compile(loss=self.loss, optimizer=self.optimizer)
         '''
         model = load_model('dqnAgent.h5')
-        print("loaded dqnAgentMax10000")
+        print("loaded dqnAgent")
         
         return model
