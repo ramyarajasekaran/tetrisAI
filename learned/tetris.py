@@ -68,8 +68,9 @@ class Tetris:
     }
 
 
-    def __init__(self):
+    def __init__(self,hateris):
         self.reset()
+        self.hater=hateris
 
     
     def reset(self):
@@ -114,9 +115,13 @@ class Tetris:
         if len(self.bag) == 0:
             self.bag = list(range(len(Tetris.TETROMINOS)))
             random.shuffle(self.bag)
-        
         self.current_piece = self.next_piece
-        self.next_piece = self.bag.pop()
+        if hateris==None:
+            self.next_piece = self.bag.pop()
+        else:
+            next_states = self.get_next_states()
+            best_state = self.hater.best_state(next_states.values())
+            self.next_piece = 
         self.current_pos = [3, 0]
         self.current_rotation = 0
 

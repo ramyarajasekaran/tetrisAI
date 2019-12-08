@@ -10,15 +10,15 @@ import pickle
 
 # Run dqn with Tetris
 def dqn():
-    env = Tetris()
-    episodes = 10000
+    env = Tetris(None)
+    episodes = 4000
     max_steps = None
-    epsilon_stop_episode = 7000
+    epsilon_stop_episode = 2000
     mem_size = 20000
     discount = 0.95
-    batch_size = 512
+    batch_size = 1024
     epochs = 1
-    render_every = 1000
+    render_every = 300
     log_every = 50
     replay_start_size = 2000
     train_every = 1
@@ -27,6 +27,10 @@ def dqn():
     activations = ['relu', 'relu', 'linear']
 
     agent = DQNAgent(env.get_state_size(),
+                     n_neurons=n_neurons, activations=activations,
+                     epsilon_stop_episode=epsilon_stop_episode, mem_size=mem_size,
+                     discount=discount, replay_start_size=replay_start_size)
+    hateris = DQNAgent(env.get_state_size(),
                      n_neurons=n_neurons, activations=activations,
                      epsilon_stop_episode=epsilon_stop_episode, mem_size=mem_size,
                      discount=discount, replay_start_size=replay_start_size)
@@ -70,6 +74,7 @@ def dqn():
         # Train
         if episode % train_every == 0:
             agent.train(batch_size=batch_size, epochs=epochs)
+            hateris.train(batch_size=batch_size, epochs=epochs)
 
         # Logs
         if log_every and episode and episode % log_every == 0:
