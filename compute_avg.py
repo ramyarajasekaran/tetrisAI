@@ -3,7 +3,7 @@ import os
 import numpy as np
 from scipy import stats
 
-os.chdir(r'learned/saved_agents')
+#os.chdir(r'learned/saved_agents')
 with open(sys.argv[1], 'r') as file:
     line = file.readline()
     avgs = []
