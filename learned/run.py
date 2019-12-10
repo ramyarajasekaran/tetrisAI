@@ -19,9 +19,9 @@ def dqn():
     batch_size = 512
     epochs = 1
     render_every = 300
-    log_every = 50
+    log_every = 10
     replay_start_size = 2000
-    train_every = 1
+    train_every = 2
     n_neurons = [32, 32]
     render_delay = None
     activations = ['relu', 'relu', 'linear']
@@ -29,17 +29,18 @@ def dqn():
     env = Tetris()
     with open(r"pickled_dqn", "rb") as input_file:
         agent = pickle.load(input_file)
-    '''
+        agent.epsilon = 0
+
     agent = DQNAgent(env.get_state_size(),
                      n_neurons=n_neurons, activations=activations,
                      epsilon_stop_episode=epsilon_stop_episode, mem_size=mem_size,
                      discount=discount, replay_start_size=replay_start_size)
-    '''
+
     hateris = DQNAgent(env.get_state_size()+1,
                      n_neurons=n_neurons, activations=activations,
                      epsilon_stop_episode=epsilon_stop_episode, mem_size=mem_size,
                      discount=discount, replay_start_size=replay_start_size)
-    env.hater = hateris
+    #env.hater = hateris
 
   
     log_dir = f'logs/tetris-nn={str(n_neurons)}-mem={mem_size}-bs={batch_size}-e={epochs}-{datetime.now().strftime("%Y%m%d-%H%M%S")}'
@@ -72,7 +73,7 @@ def dqn():
             reward, done = env.play(best_action[0], best_action[1], render=render,
                                     render_delay=render_delay)
             agent.add_to_memory(current_state, next_states[best_action], reward, done)
-            hateris.add_to_memory(current_state+[env.current_piece], next_states[best_action], -reward, done)
+            #hateris.add_to_memory(current_state+[env.current_piece], next_states[best_action]+[env.current_piece], -reward, done)
             current_state = next_states[best_action]
             steps += 1
 
@@ -80,8 +81,9 @@ def dqn():
 
         # Train
         if episode % train_every == 0:
-            #agent.train(batch_size=batch_size, epochs=epochs)
-            hateris.train(batch_size=batch_size, epochs=epochs)
+            pass
+            agent.train(batch_size=batch_size, epochs=epochs)
+            #hateris.train(batch_size=batch_size, epochs=epochs)
 
         # Logs
         if log_every and episode and episode % log_every == 0:
@@ -90,10 +92,12 @@ def dqn():
             max_score = max(scores[-log_every:])
             print(str(episode) + " " + str(avg_score) +" "+  str(min_score)+ " "+
                     str(max_score))
-            if (tot_max_score < max_score):
+            '''if (tot_max_score < max_score):
                 agent.save("dqnAgentMax10000.h5", episode)
-                tot_max_score = max_score
-    agent.save("dqnAgent10000.h5", episode)
+                tot_max_score = max_score'''
+   # agent.save("dqnAgent10000.h5", episode)
+    with open("pickled_dqn2", "wb") as input_file:
+        pickle.dump(agent,input_file)
 
 
 if __name__ == "__main__":

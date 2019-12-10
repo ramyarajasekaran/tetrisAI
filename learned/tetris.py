@@ -296,7 +296,7 @@ class Tetris:
         # Update board and calculate score        
         self.board = self._add_piece_to_board(self._get_rotated_piece(), self.current_pos)
         lines_cleared, self.board = self._clear_lines(self.board)
-        score = 1 + (lines_cleared ** 2) * Tetris.BOARD_WIDTH
+        score = (lines_cleared ** 2)
         self.score += score
 
         # Start new round
