@@ -38,6 +38,14 @@ in run.py file :
 ## Using compute_avg
 python3 compute_avg.py path/to/txtfile
 
+like this:
+
+        Prajaktas-MacBook-Pro:tetrisAI prajjoshi$ python3 compute_avg.py learned/saved_agents/pickled_new_agent_2800_1800_output
+        avg: 11.022611940298505
+        initial: 0.03
+        final: 13.32
+
+
 ur txt file should look something like this 
 
 
