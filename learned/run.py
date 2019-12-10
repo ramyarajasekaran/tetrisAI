@@ -10,7 +10,7 @@ import pickle
 
 # Run dqn with Tetris
 def dqn():
-    env = Tetris(None)
+    
     episodes = 2000
     max_steps = None
     epsilon_stop_episode = 1400
@@ -26,15 +26,22 @@ def dqn():
     render_delay = None
     activations = ['relu', 'relu', 'linear']
 
+    env = Tetris()
+    with open(r"pickled_dqn", "rb") as input_file:
+        agent = pickle.load(input_file)
+    '''
     agent = DQNAgent(env.get_state_size(),
                      n_neurons=n_neurons, activations=activations,
                      epsilon_stop_episode=epsilon_stop_episode, mem_size=mem_size,
                      discount=discount, replay_start_size=replay_start_size)
-    hateris = DQNAgent(env.get_state_size(),
+    '''
+    hateris = DQNAgent(env.get_state_size()+1,
                      n_neurons=n_neurons, activations=activations,
                      epsilon_stop_episode=epsilon_stop_episode, mem_size=mem_size,
                      discount=discount, replay_start_size=replay_start_size)
+    env.hater = hateris
 
+  
     log_dir = f'logs/tetris-nn={str(n_neurons)}-mem={mem_size}-bs={batch_size}-e={epochs}-{datetime.now().strftime("%Y%m%d-%H%M%S")}'
     log = CustomTensorBoard(log_dir=log_dir)
 
@@ -53,7 +60,7 @@ def dqn():
 
         # Game
         while not done and (not max_steps or steps < max_steps):
-            next_states = env.get_next_states()
+            next_states = env.get_next_states(env.current_piece)
             best_state = agent.best_state(next_states.values())
             
             best_action = None
@@ -64,8 +71,8 @@ def dqn():
 
             reward, done = env.play(best_action[0], best_action[1], render=render,
                                     render_delay=render_delay)
-            
             agent.add_to_memory(current_state, next_states[best_action], reward, done)
+            hateris.add_to_memory(current_state+[env.current_piece], next_states[best_action], -reward, done)
             current_state = next_states[best_action]
             steps += 1
 
@@ -73,7 +80,7 @@ def dqn():
 
         # Train
         if episode % train_every == 0:
-            agent.train(batch_size=batch_size, epochs=epochs)
+            #agent.train(batch_size=batch_size, epochs=epochs)
             hateris.train(batch_size=batch_size, epochs=epochs)
 
         # Logs
