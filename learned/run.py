@@ -10,18 +10,17 @@ import pickle
 
 # Run dqn with Tetris
 def dqn():
-    
-    episodes = 2000
+    episodes = 2800
     max_steps = None
-    epsilon_stop_episode = 1400
+    epsilon_stop_episode = 1800
     mem_size = 20000
     discount = 0.95
     batch_size = 512
     epochs = 1
     render_every = 300
-    log_every = 10
+    log_every = 20
     replay_start_size = 2000
-    train_every = 2
+    train_every = 1
     n_neurons = [32, 32]
     render_delay = None
     activations = ['relu', 'relu', 'linear']
@@ -73,7 +72,7 @@ def dqn():
             reward, done = env.play(best_action[0], best_action[1], render=render,
                                     render_delay=render_delay)
             agent.add_to_memory(current_state, next_states[best_action], reward, done)
-            #hateris.add_to_memory(current_state+[env.current_piece], next_states[best_action]+[env.current_piece], -reward, done)
+            hateris.add_to_memory(current_state+[env.current_piece], next_states[best_action]+[env.current_piece], -reward, done)
             current_state = next_states[best_action]
             steps += 1
 
@@ -83,21 +82,21 @@ def dqn():
         if episode % train_every == 0:
             pass
             agent.train(batch_size=batch_size, epochs=epochs)
-            #hateris.train(batch_size=batch_size, epochs=epochs)
+            hateris.train(batch_size=batch_size, epochs=epochs)
 
         # Logs
-        if log_every and episode and episode % log_every == 0:
-            avg_score = mean(scores[-log_every:])
-            min_score = min(scores[-log_every:])
-            max_score = max(scores[-log_every:])
+        if log_every and episode and episode % log_every == 0 and episode>101:
+            avg_score = mean(scores[-100:])
+            min_score = min(scores[-100:])
+            max_score = max(scores[-100:])
             print(str(episode) + " " + str(avg_score) +" "+  str(min_score)+ " "+
                     str(max_score))
             '''if (tot_max_score < max_score):
                 agent.save("dqnAgentMax10000.h5", episode)
                 tot_max_score = max_score'''
    # agent.save("dqnAgent10000.h5", episode)
-    with open("pickled_dqn2", "wb") as input_file:
-        pickle.dump(agent,input_file)
+    #with open("pickled_dqn2", "wb") as input_file:
+        #pickle.dump(agent,input_file)
 
 
 if __name__ == "__main__":
