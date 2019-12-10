@@ -34,7 +34,8 @@ in run.py file :
                      epsilon_stop_episode=epsilon_stop_episode, mem_size=mem_size,
                      discount=discount, replay_start_size=replay_start_size)
     '''
-   
+ 
+ also comment out the the agent.train and agent.add_to_memory
 ## Using compute_avg
 python3 compute_avg.py path/to/txtfile
 
