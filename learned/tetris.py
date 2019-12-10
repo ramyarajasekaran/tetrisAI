@@ -66,10 +66,11 @@ class Tetris:
         1: (247, 64, 99),
         2: (0, 167, 247),
     }
-
+    hater=None
 
     def __init__(self):
         self.reset()
+        self.hater=None
 
     
     def reset(self):
@@ -106,7 +107,6 @@ class Tetris:
         For lines cleared, it is used BOARD_WIDTH * lines_cleared ^ 2.
         '''
         return self.score
-    
 
     def _new_round(self):
         '''Starts a new round (new piece)'''
@@ -114,9 +114,11 @@ class Tetris:
         if len(self.bag) == 0:
             self.bag = list(range(len(Tetris.TETROMINOS)))
             random.shuffle(self.bag)
-        
         self.current_piece = self.next_piece
-        self.next_piece = self.bag.pop()
+        if self.hater==None:
+            self.next_piece = self.bag.pop()
+        else:
+            self.next_piece = self.hater.best_state(self._get_piece_states())[4]
         self.current_pos = [3, 0]
         self.current_rotation = 0
 
@@ -231,11 +233,16 @@ class Tetris:
         sum_height, max_height, min_height = self._height(board)
         return [lines, holes, total_bumpiness, sum_height]
 
+    def _get_piece_states(self):
+        out_states=[]
+        for piece in list(range(len(Tetris.TETROMINOS))):
+            out_states.append(tuple(self._get_board_props(self.board)+[piece]))
+        return out_states
 
-    def get_next_states(self):
+    def get_next_states(self, piece):
         '''Get all possible next states'''
         states = {}
-        piece_id = self.current_piece
+        piece_id = piece
         
         if piece_id == 6: 
             rotations = [0]
