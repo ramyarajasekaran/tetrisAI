@@ -6,18 +6,18 @@ import random
 from logs import CustomTensorBoard
 from tqdm import tqdm
 import pickle
-        
+import matplotlib.pyplot as plt
 
 # Run dqn with Tetris
 def dqn():
-    episodes = 2800
+    episodes = 10000
     max_steps = None
-    epsilon_stop_episode = 1800
+    epsilon_stop_episode = 7000
     mem_size = 20000
     discount = 0.95
     batch_size = 512
     epochs = 1
-    render_every = 300
+    render_every = 1000
     log_every = 20
     replay_start_size = 2000
     train_every = 1
@@ -26,20 +26,25 @@ def dqn():
     activations = ['relu', 'relu', 'linear']
 
     env = Tetris()
-    with open(r"pickled_dqn", "rb") as input_file:
+
+    '''
+    with open(r"saved_agents/pickled_new_agent_10000_7000", "rb") as input_file:
         agent = pickle.load(input_file)
         agent.epsilon = 0
-
+    
+    '''
     agent = DQNAgent(env.get_state_size(),
                      n_neurons=n_neurons, activations=activations,
                      epsilon_stop_episode=epsilon_stop_episode, mem_size=mem_size,
                      discount=discount, replay_start_size=replay_start_size)
-
+    agent.epsilon = 0
+    '''
     hateris = DQNAgent(env.get_state_size()+1,
                      n_neurons=n_neurons, activations=activations,
                      epsilon_stop_episode=epsilon_stop_episode, mem_size=mem_size,
                      discount=discount, replay_start_size=replay_start_size)
     #env.hater = hateris
+    '''
 
   
     log_dir = f'logs/tetris-nn={str(n_neurons)}-mem={mem_size}-bs={batch_size}-e={epochs}-{datetime.now().strftime("%Y%m%d-%H%M%S")}'
@@ -71,33 +76,35 @@ def dqn():
 
             reward, done = env.play(best_action[0], best_action[1], render=render,
                                     render_delay=render_delay)
-            agent.add_to_memory(current_state, next_states[best_action], reward, done)
-            hateris.add_to_memory(current_state+[env.current_piece], next_states[best_action]+[env.current_piece], -reward, done)
+            #agent.add_to_memory(current_state, next_states[best_action], reward, done)
+            #hateris.add_to_memory(current_state+[env.current_piece], next_states[best_action]+[env.current_piece], -reward, done)
             current_state = next_states[best_action]
             steps += 1
 
         scores.append(env.get_game_score())
 
         # Train
-        if episode % train_every == 0:
-            pass
-            agent.train(batch_size=batch_size, epochs=epochs)
-            hateris.train(batch_size=batch_size, epochs=epochs)
+        #if episode % train_every == 0:
+            #agent.train(batch_size=batch_size, epochs=epochs)
+            #hateris.train(batch_size=batch_size, epochs=epochs)
 
         # Logs
-        if log_every and episode and episode % log_every == 0 and episode>101:
-            avg_score = mean(scores[-100:])
-            min_score = min(scores[-100:])
-            max_score = max(scores[-100:])
+        #if log_every and episode and episode % log_every == 0 and episode>101:
+        if log_every and episode and episode % log_every == 0:
+            avg_score = mean(scores[-log_every:])
+            min_score = min(scores[-log_every:])
+            max_score = max(scores[-log_every:])
             print(str(episode) + " " + str(avg_score) +" "+  str(min_score)+ " "+
                     str(max_score))
             '''if (tot_max_score < max_score):
                 agent.save("dqnAgentMax10000.h5", episode)
                 tot_max_score = max_score'''
-   # agent.save("dqnAgent10000.h5", episode)
-    #with open("pickled_dqn2", "wb") as input_file:
-        #pickle.dump(agent,input_file)
 
+    #agent.save("dqnAgent10000.h5", episode)
+   # with open("saved_agents/pickled_new_agent_10000_7000", "wb") as input_file:
+        #pickle.dump(agent,input_file)
+    plt.plot(scores)
+    plt.show()
 
 if __name__ == "__main__":
     dqn()

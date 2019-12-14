@@ -54,7 +54,7 @@ class DQNAgent:
 
 
     def _build_model(self):
-        '''Builds a Keras deep neural network model'''
+        '''Builds a Keras deep neural network model
         model = Sequential()
         model.add(Dense(self.n_neurons[0], input_dim=self.state_size, activation=self.activations[0]))
 
@@ -64,6 +64,8 @@ class DQNAgent:
         model.add(Dense(1, activation=self.activations[-1]))
 
         model.compile(loss=self.loss, optimizer=self.optimizer)
+        '''
+        model = load_model("dqnAgent10000.h5")
         
         return model
 
